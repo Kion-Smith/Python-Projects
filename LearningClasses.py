@@ -1,17 +1,42 @@
 class Person:
-    name = "null"  
-    def assignName(self,userInput): #Need to make sure to use self
-        name = userInput # does not work, looking into fixing this
-        print("Hello I am now know as "+userInput+".")
+
+    
+    #I dont think you can create an empty default constructor in python, but 
+    # @classmethod can be used for 
+    def __init__(self, name=""):
+        if not name:
+            self.name = "Null"
+        else:
+            self.name = name
+
+
+        
+    def assignName(self,name): 
+        tempName = self.name
+        self.name = name 
+        return("I was "+tempName+ " now I go by "+self.name+".")
+        
         
     def introduction(self):
-        if name is 'null':
-            print('I do not have a name')
+        if self.name is "Null":
+            return('I do not have a name')
         else:
-            print('Hello my name is'+name)
+            return('Hello my name is '+self.name)
             
 
 personObj = Person()
+kionObj = Person("Kion")
+
 print(personObj.name)
-personObj.assignName('Kion')  
+print(kionObj.name)
+
+print(personObj.assignName("Jeff"))
+print(kionObj.assignName("Null"))
+
+print(personObj.introduction())
+print(kionObj.introduction())
+
+
+
+
 
