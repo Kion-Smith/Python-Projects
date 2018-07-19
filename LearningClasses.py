@@ -20,13 +20,11 @@ class Person(object):
             return('I do not have a name')
         else:
             return('Hello my name is '+self.name)
-        
-class Student(object):
-    def __init__(self,name):
-        if not name:
-            self.name = "Null"
-        else:
-            self.name = name
+ #inhertence       
+class Student(Person):
+    def __init__(self,name,GPA):
+        super().__init__(name)
+        self.GPA = GPA
             
     def setName(self,name):
         tempName = self.name
@@ -40,7 +38,7 @@ def assignName(personType):
 
 personObj = Person()
 kionObj = Person("Kion")
-studentObj = Student("Jack")
+studentObj = Student("Jack",3.7)
 
 print(personObj.name)
 print(kionObj.name)
