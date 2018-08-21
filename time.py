@@ -20,7 +20,7 @@ def secToYear():
 
     
 
-print ("Times since epoc not including leap years")
+print ("Times since epoch not including leap years")
 print ("Time in seconds since 1970",curTime)
 print ("Time in Minutes since 1970",secToMin())
 print ("Time in Hour since 1970",secToHour())
