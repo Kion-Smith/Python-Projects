@@ -1,0 +1,20 @@
+import sqlite3
+#Using this to understand how sql lite works -> https://www.geeksforgeeks.org/sql-using-python/
+#make connection to database
+connection = sqlite3.connect("test.db")
+crsr = connection.cursor()
+
+sql_command = """ CREATE TABLE tTable ( 
+id INTEGER PRIMARY KEY,
+Name TEXT,
+location TEXT);
+"""
+#Creates the table
+crsr.execute(sql_command)
+
+insertingElement = """INSERT INTO tTable VALUES (1,"Kion", Richardson) """
+crsr.execute(insertingElement)
+
+
+connection.commit()
+connection.close()
