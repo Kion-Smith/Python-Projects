@@ -1,65 +1,17 @@
-class Person(object):
-    #I dont think you can create an empty default constructor in python, but 
-    # @classmethod can be used for 
-    def __init__(self, name=""):
-        if not name:
-            self.name = "Null"
-        else:
-            self.name = name
-
-
-        
-    def setName(self,name): 
-        tempName = self.name
-        self.name = name 
-        return("I was "+tempName+ " now I go by "+self.name+".")
-        
+class Person:
+    name = "null"  
+    def assignName(self,userInput): #Need to make sure to use self
+        name = userInput # does not work, looking into fixing this
+        print("Hello I am now know as "+userInput+".")
         
     def introduction(self):
-        if self.name is "Null":
-            return('I do not have a name')
+        if name is 'null':
+            print('I do not have a name')
         else:
-            return('Hello my name is '+self.name)
- #inhertence       
-class Student(Person):
-    def __init__(self,name,GPA):
-        super().__init__(name)
-        self.GPA = GPA
+            print('Hello my name is'+name)
             
-    def setName(self,name):
-        tempName = self.name
-        self.name = name
-        return("Hello I am "+self.name+" and I am a student")
-
-
-def assignName(personType):
-    return personType.name
-        
 
 personObj = Person()
-kionObj = Person("Kion")
-studentObj = Student("Jack",3.7)
-
 print(personObj.name)
-print(kionObj.name)
-print(studentObj.name)
-
-print("++++++++++++++")
-print(personObj.setName("Jeff"))
-print(kionObj.setName("Null"))
-print("++++++++++++++")
-
-print(studentObj.setName("J A C K"))
-print(personObj.introduction())
-print(kionObj.introduction())
-print("++++++++++++++")
-
-
-print(assignName(personObj))
-print(assignName(kionObj))
-print(assignName(studentObj))
-
-
-
-
+personObj.assignName('Kion')  
 
